@@ -13,6 +13,14 @@
 
 ## `NodeJS, Express` 프로젝트 생성하기
 
+- 기본 NodeJS Express 프로젝트
+
 ```bash
 npx express-21c [project]
+```
+
+- MySQL, Sequelize 를 포함한 DBMS 프로젝트
+
+```bash
+npx express-21c [project] -s
 ```
