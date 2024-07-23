@@ -8,6 +8,8 @@ import {
   expoNum,
 } from "./arrays.js";
 
+import objView from "./json.js";
+
 arrays();
 multiArrays();
 
@@ -19,3 +21,5 @@ viewNations();
 
 addNums();
 expoNum();
+
+objView();
