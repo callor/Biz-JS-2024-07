@@ -42,3 +42,13 @@ article.list {
     }
   }
 }
+
+table.books tbody {
+  tr:nth-of-type(odd) {
+    background-color: #eee;
+  }
+  tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+}

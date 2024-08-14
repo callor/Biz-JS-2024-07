@@ -1,0 +1,42 @@
+extends ../layout 
+
+block content
+    style.
+        section.detail {
+            display:flex;
+            article {
+                flex:1
+            }
+            article.descript {
+                flex:3;
+            }
+        } 
+    section.detail
+        article 
+            img(src=`${BOOK.image}`,width="200px")
+        article.desript
+            div
+                strong ISBN 
+                span= BOOK.isbn 
+            div     
+                strong 도서명
+                span= BOOK.title
+            div 
+                strong 네이버쇼핑
+                span
+                    a(href= `${BOOK.link}`, target="_new") 바로가기
+            div
+                strong 출판사
+                span= BOOK.publisher 
+            div
+                strong 저자
+                span= BOOK.author 
+            div 
+                strong 판매가격
+                span= BOOK.discount 
+            div 
+                strong 출판일
+                span= BOOK.pubdate 
+            div
+               strong 개요
+               span= BOOK.description 

@@ -9,17 +9,19 @@ block content
         input(placeholder="검색어를 입력하세요",name="search")
 
       table.books
-        tr
-          th ISBN 
-          th 도서명
-          th 저자
-          th 출판사
-          th 판매가
-        each BOOK in BOOKS
-          tr 
-            td= BOOK.isbn
-            td= BOOK.title 
-            td= BOOK.author 
-            td= BOOK.publisher 
-            td= BOOK.discount
+        thead
+          tr
+            th ISBN 
+            th 도서명
+            th 저자
+            th 출판사
+            th 판매가
+          tbody
+            each BOOK in BOOKS
+              tr(data-isbn=`${BOOK.isbn}`)
+                td= BOOK.isbn
+                td= BOOK.title 
+                td= BOOK.author 
+                td= BOOK.publisher 
+                td= BOOK.discount
     article.detail

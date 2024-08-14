@@ -36,3 +36,19 @@ document.addEventListener("DOMContentLoaded", () => {
    */
   search_form.addEventListener("submit", onSubmitHandler);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const data_body = document.querySelector("table.books tbody");
+  const onBookDetail = async (e) => {
+    const target = e.target;
+    if (target.tagName === "TD") {
+      const isbn = target.closest("TR").dataset.isbn;
+      // alert(`detail ${isbn}`);
+      // document.location.href = `/detail/${isbn}`;
+      const response = await fetch(`/detail/${isbn}`);
+      const html = await response.text();
+      document.querySelector("article.detail").innerHTML = html;
+    }
+  };
+  data_body.addEventListener("click", onBookDetail);
+});

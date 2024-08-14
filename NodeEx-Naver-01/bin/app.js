@@ -26,6 +26,19 @@ const app = express();
 
 // helmet security module
 app.use(helmet());
+const cspDirective = {
+  directives: {
+    defaultSrc: ["'self'"],
+    "img-src": ["'self'", "blob:", "data:", "https://shopping-phinf.pstatic.net"],
+    "script-src": ["'self'", "'unsafe-inline'", "https://fontawesome.com"],
+    "style-src": ["'self'", "'unsafe-inline'", "data:", "https://fontawesome.com"],
+
+    // imgSrc: ["'self'", "blob:", "data:", "https://shopping-phinf.pstatic.net"],
+    // scriptSrc: ["'self'", "'unsafe-inline'", "https://fontawesome.com"],
+    // styleSrc: ["'self'", "'unsafe-inline'", "data:", "https://fontawesome.com"],
+  },
+};
+app.use(helmet.contentSecurityPolicy(cspDirective));
 
 // Disable the fingerprinting of this web technology.
 app.disable("x-powered-by");
