@@ -10,7 +10,7 @@ const getBooks = async (search) => {
     },
   };
 
-  const queryString = `${NAVER_BOOK_URL}?query=${search}&display=1`;
+  const queryString = `${NAVER_BOOK_URL}?query=${search}&display=10&start=1`;
   const response = await fetch(queryString, naverFetchOption);
   const json = await response.json();
 
