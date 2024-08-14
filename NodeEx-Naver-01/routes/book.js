@@ -3,8 +3,11 @@ import express from "express";
 // express framework 를 사용하여 router 생성하기
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  return res.send("Hello Book");
+import { getBooks } from "../modules/naver_api.js";
+
+router.get("/", async (req, res) => {
+  //   return res.send("Hello Book");
+  return res.json(await getBooks("java"));
 });
 
 export default router;

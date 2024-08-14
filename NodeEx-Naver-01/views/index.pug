@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  link(href="/css/books.css",rel="stylesheet")
+  section.main
+    article.list
+      form
+        input(placeholder="검색어를 입력하세요",name=search)
+
+        table.books
+          tr
+            th ISBN 
+            th 도서명
+            th 저자
+            th 출판사
+            th 판매가
+    article.detail

@@ -10,10 +10,27 @@ html {
 
 body {
   height: 100%;
+  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+header.main {
+  padding: 1.2rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  div {
+    width: 30%;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url("/images/naver_logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
 }
