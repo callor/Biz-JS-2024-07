@@ -160,8 +160,9 @@ class dTree {
       }" href="${node.url}" `;
       if (node.title) str += ` title=${node.title}`;
       if (node.target) str += ` target=${node.target}`;
-      // prettier-ignore
-      if (this.config.useStatusText) str += ` onmouseover="window.status=${node.name};return true"; onmouseout="window.status=;return true;" `;
+
+      if (this.config.useStatusText)
+        str += ` onmouseover="window.status=${node.name};return true"; onmouseout="window.status=;return true;" `;
       if (this.config.useSelection && ((node._hc && this.config.folderLinks) || !node._hc))
         str += ` onclick="javascript: ${this.obj}.o('${nodeId}');"`;
       str += ">";
